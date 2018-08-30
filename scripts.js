@@ -6,12 +6,12 @@ let firsCard, secondCard;
 function flipCard() {
   this.classList.toggle('flip');
 if (!hasFlippedCard) {
-  // first click
+  // first clicke
   hasFlippedCard = true;
   firsCard = this;
 }
 else{
-  // second Click
+  // second Clicke
   hasFlippedCard =flase;
   secondCard =this;
   
