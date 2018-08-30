@@ -7,7 +7,7 @@
 body {
     height: 100vh;
     display: flex;
-    background: #a79f31;
+    background: #bbb23b;
 }
 
 .memery-game {
@@ -24,7 +24,7 @@ body {
     height: calc(33.333% - 10px);
     position: relative;
     transform: scale(1);
-    box-shadow: 2px 2px 2px rgba(0,0, 0, .1);
+    box-shadow: 5px 5px 5px rgba(255, 255, 255, 0.014);
     transform-style: preserve-3d;
     transition: transform .2s;
     
@@ -45,7 +45,7 @@ body {
     padding: 20%;
     position: absolute;
     border-radius: 5px;
-    background: #f1e203;
+    background: #eef107;
     backface-visibility: hidden;
 
 }
