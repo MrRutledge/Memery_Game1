@@ -1,22 +1,46 @@
 const cards = document.querySelectorAll('.memery-card');
 
 let hasFlippedCard = false;
-let firsCard, secondCard;
+let lockBoard = false;
+let firstCard, secondCard;
 
 function flipCard() {
   this.classList.toggle('flip');
 if (!hasFlippedCard) {
-  // first clicke
+  // first click
   hasFlippedCard = true;
-  firsCard = this;
+  firstCard = this;
+
+  return;
 }
 else{
-  // second Clicke
-  hasFlippedCard =flase;
-  secondCard =this;
+  // second click
+  hasFlippedCard = flase;
+  secondCard = this;
+
+  checkFoMatch();
+  }
+}
+
+function checkFoMatch() {
+  //checking if the cards match 
   
-  //
-}
-}
+  let isMatch = firstCard.dataset.image === secondCard.dataset.image 
+    //
+   isMatch ? disableCards() : unflipCards();
+  }
+
+  function disableCards() {
+    firstCard.removeEventListener('click', flipCard);
+    secondCard.removeEventListener('click', flipCard);
+    
+  }
+  function unflipCards() {
+    setTimeout(() => {
+      firstCard.classList.remove('flip');
+      secondCard.classList.remove('flip');
+    }, 1400);
+  }
+
 
 cards.forEach(card => card.addEventListener('click', flipCard));
